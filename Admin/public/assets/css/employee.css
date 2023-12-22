@@ -1,0 +1,55 @@
+.home-section .data-table .add-employ button{
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 12px;
+    background-color: #1d1b31;
+    color: #fff;
+}
+
+.home-section .data-table .add-employ button:hover{
+    background-color: #242141;
+}
+
+table tbody tr td .btn-edit{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 1rem;
+    background-color: rgb(212, 212, 129);
+}
+table tbody tr td .btn-edit:hover{
+    background-color: rgb(218, 218, 111);
+}
+
+table tbody tr td .btn-delete{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 1rem;
+    background-color: rgb(228, 123, 123);
+}
+table tbody tr td .btn-delete:hover{
+    background-color: rgb(224, 102, 102);
+}
+
+table tbody tr td .btn-add{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 1rem;
+    background-color: rgb(77, 185, 92);
+}
+table tbody tr td .btn-add:hover{
+    background-color: rgb(86, 167, 99);
+}
+
+.dat{
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 12px;
+}

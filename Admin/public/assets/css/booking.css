@@ -1,0 +1,75 @@
+.content {
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+.content p{
+    font-size: 18px;
+}
+.title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.input-box input,
+.input-box select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.form .input-box input:focus,
+.form .input-box select:focus
+{
+    border-color: #9b59b6;
+}
+
+form .button{
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 12px;
+    background-color: #1d1b31;
+    color: #fff;
+}
+
+form .button:hover{
+    background-color: #242141;
+}
+
+.info p{
+    font-size: 17px;
+}
+
+@media(max-width: 584px) {
+    .content {
+        max-width: 100%;
+    }
+}
+@media(max-width: 1295px) {
+    .info p{
+        font-size: 14px;
+    }
+}
+@media(max-width: 900px){
+    .info p{
+        font-size: 12px;
+    }
+}
+@media(max-width: 767px){
+    .info p{
+        font-size: 16px;
+    }
+}
