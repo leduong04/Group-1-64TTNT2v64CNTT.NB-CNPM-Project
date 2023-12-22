@@ -1,0 +1,495 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+:root {
+	--poppins: 'Arial', sans-serif;
+	--lato: 'Lato', sans-serif;
+	--light: #F9F9F9;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: #342E37;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--orange: #FD7238;
+	--light-orange: #FFE0D3;
+}
+header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+header .head_content{
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    display: flex;
+    height: 80px;
+    overflow: hidden;
+    margin: auto;
+}
+header .head_content .head_logo img{
+    width: 300px;
+    padding-top: 25px;
+    margin: auto;
+    user-select: none;
+}
+header .head_content .head_logo{
+    width: 230px;
+    align-items: center;
+    overflow: hidden;
+}
+header .head_link{
+    width: 60%;
+    margin: auto;
+    vertical-align: middle;
+    height: 100%;
+}
+header .head_link .menu_item{
+    letter-spacing: 1.4px;
+    list-style: none;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+header .head_link .menu_child{
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    height: 100%;
+}
+header .head_link a{
+    transition: 0.3s ease;
+    align-items: center;
+    font-size: 20px;
+    color: var(--light);
+}
+header .head_link a:hover{
+    color: var(--yellow);
+}
+header .head_link a div{
+    padding: 26px 10px;
+    height: 80px;
+    text-align: center;
+    justify-content: center;
+}
+header .head_log{
+    max-width: 23.66667%;
+    display: flex;
+}
+header .head_log .book_room a{
+    transition: 0.3s ease;
+    padding: 1.023rem 1.6rem;
+    background-color: #d69c2f;
+    color: var(--light);
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block !important;
+}
+header .head_log .book_room a:hover{
+    background-color: var(--light);
+    color: #d69c2f;
+}
+header .head_log .log_admin{
+    padding: 1.023rem 1.8rem;
+}
+header .head_log .log_admin a{
+    color: #d69c2f;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+@media (min-width: 960px){
+    .head_content {
+        max-width: 980px;
+    }
+}
+@media (min-width: 1200px){
+    .head_content {
+        max-width: 1380px;
+    }
+}
+
+
+/* MAIN */
+/* main{
+    height: 200vh;
+} */
+main .image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s ease-in-out; 
+}
+main .overlay {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: rgba(0, 0, 0, 0.631);
+    z-index: 1;
+}
+
+main .overlay img {
+    width: 100%;
+    height: auto;
+    transition: all 1s ease-in-out;
+}
+
+main .image-title {
+    font-size: 30px;
+    transition: all 1s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #1212128d;
+    display: flex;
+    padding: 30px 10%;
+    color: #eeb955;
+    font-weight: bold;
+    z-index: 2;
+}
+main .image-title .img_name {
+    width: 78%;
+}
+main .image-title .img_name .name_img{
+    font-size: 2.5rem;
+    color: var(--light);
+}
+main .image-title .img_name .title_img{
+    font-size: 1.2rem;
+    margin-top: 25px;
+    color: var(--light);
+}
+main .image-title .img_name .title_img a{
+    position: relative;
+    color: #d69c2f;
+}
+main .image-title .img_name .title_img a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #d69c2f;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-out;
+}
+main .image-title .img_name .title_img a:hover:after {
+    width: 100%;
+}
+main .image-title .img_prize p{
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    font-size: 1.2rem;
+    color: var(--light);
+}
+main .image-title .img_prize p span{
+    font-size: 1.6rem;
+    color: #d69c2f;
+}
+main .main-container{
+    width: 100%;
+}
+main .main-container .image-container-main{
+    width: 100%;
+}
+main .image-container-main .image_main{
+    display: flex;
+    padding: 30px 15px;
+    margin: auto;
+}
+main .image-left{
+    overflow: hidden;
+    width: 50%;
+}
+main .image-left #main-image{
+ 
+    width: 100%;
+}
+main .image-left .thumbnail-container{
+    width: 100%;
+    display: flex;
+}
+main .image-left .thumbnail-container img{
+    width: 24.43333333%;
+    margin-left: 1%;
+    position: relative;
+    cursor: pointer;
+}
+main .image-left .thumbnail-container img:first-child{
+    margin-left: 0;
+}
+main .image-right{
+    position: relative;
+    width: 50%;
+    padding: 0 30px;
+}
+main .image-right .image-right_tt{
+    position: absolute;
+    top: 0;
+    right: 30px;
+    background-color: #d69c2f;
+    color: var(--light);
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+main .image-right .image-right-name{
+    color: #d69c2f;
+    font-size: 40px;
+}
+main .image-right .image-right-mt{
+    color: #858585;
+    font-size: 18px;
+    text-align: justify;
+    margin-top: 30px;
+}
+main .image-right .image-right-prize{
+    color: #d69c2f;
+    font-size: 25px;
+}
+main .image-right .image_icon{
+    font-size: 20px;
+    color: #d69c2f;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+main .image-right .image-right-btt{
+    margin-top: 20px;
+}
+main .image-right .image-right-btt button{
+    border: none;
+    transition: all 0.3s ease-out;
+    background-color: #d69c2f;
+    border: 1px solid #d69c2f;
+    color: var(--light);
+    font-size: 20px;
+    padding: 20px 30px;
+}
+main .image-right .image-right-btt button:hover{
+    background-color: var(--light);
+    color: #d69c2f;
+}
+main .image-right .image-right-btt a{
+    transition: all 0.3s ease-out;
+    background-color: #d69c2f;
+    border: 1px solid #d69c2f;
+    color: var(--light);
+    font-size: 20px;
+    padding: 20px 30px;
+}
+main .image-right .image-right-btt a:hover{
+    background-color: var(--light);
+    color: #d69c2f;
+}
+main .other_room{
+    background-color: var(--grey);
+    width: 100%;
+}
+main .other_room .other_room_main{
+    margin: auto;
+    padding: 30px 15px;
+}
+main .other_room_main .other_name{
+    font-size: 40px;
+}
+main .other_room_main .other{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+}
+main .other .other_img{
+    display: none;
+    padding: 10px;
+    width: 33.333333%;
+    overflow: hidden;
+}
+main .other_img img{
+    width: 100%;
+}
+main .other_img .other_title{
+    position: relative;
+    color: var(--dark);
+    font-size: 25px;
+}
+main .other_img .other_title:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #d69c2f;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-out;
+}
+main .other_img:hover .other_title:after {
+    width: 100%;
+}
+main .other_img .other_prize{
+    font-size: 20px;
+    color: #d69c2f;
+}
+main .other_room_main .other_button{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+main .other_button button{
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    border: none;
+    background-color: #85858500;
+    color: #d69c2f;
+    font-size: 30px;
+}
+main .other_button button i, main .other_button button p{
+    transition: all 0.3s ease-out;
+}
+main .other_button button:hover i{
+    margin-top: 10px;
+}
+main .other_button button:hover p{
+    text-decoration: underline;
+}
+/* FOOT */
+footer .container{
+	margin:auto;
+}
+footer .row{
+	display: flex;
+	flex-wrap: wrap;
+}
+footer ul{
+	list-style: none;
+}
+footer ul .inf{
+    display: flex;
+    color: #d69c2f;
+}
+footer ul .tt{
+    color: #d69c2f;
+    margin-bottom: 10px;
+}
+.footer{
+	background-color: var(--dark);
+    padding: 40px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+    text-transform: uppercase;
+	color: #ffffff;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #d69c2f;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+    position: relative;
+	font-size: 16px;
+	text-transform: capitalize;
+	text-decoration: none;
+	/* font-weight: 300; */
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+footer ul .inf a{
+    margin-left: 5px;
+    text-transform:initial;
+}
+footer ul .inf span{
+    color: #fff;
+    margin-left: 5px;
+}
+.footer-col ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Chiều cao của gạch chân */
+    bottom: 0;
+    left: 0;
+    background-color: #d69c2f; /* Màu của gạch chân */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: transform 0.3s ease, visibility 0.3s ease;
+  }
+.footer-col ul li a:hover{
+    color: #fff;
+}
+.footer-col ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	background-color: #d69c2f;
+}
+
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+    }
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+    }
+}
+@media (min-width: 960px){
+    footer .container, main .ovv_content, main .search_content,
+    main .choose_content, main .room, main .image_main, main .other_room_main
+    {
+        max-width: 980px;
+    }
+}
+@media (min-width: 1200px){
+    footer .container, main .ovv_content, main .search_content,
+    main .choose_content, main .room, main .image_main, main .other_room_main
+    {
+        max-width: 1380px;
+    }
+}

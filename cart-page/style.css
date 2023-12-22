@@ -1,0 +1,459 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+:root {
+	--poppins: 'Arial', sans-serif;
+	--lato: 'Lato', sans-serif;
+	--light: #F9F9F9;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: #342E37;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--orange: #FD7238;
+	--light-orange: #FFE0D3;
+}
+header{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    /* background-color: var(--dark); */
+    background-color: var(--dark);
+}
+header .head_content{
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    display: flex;
+    height: 80px;
+    overflow: hidden;
+    margin: auto;
+}
+header .head_content .head_logo img{
+    width: 300px;
+    padding-top: 25px;
+    margin: auto;
+    user-select: none;
+}
+header .head_content .head_logo{
+    width: 230px;
+    align-items: center;
+    overflow: hidden;
+}
+header .head_link{
+    width: 60%;
+    margin: auto;
+    vertical-align: middle;
+    height: 100%;
+}
+header .head_link .menu_item{
+    letter-spacing: 1.4px;
+    list-style: none;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+header .head_link .menu_child{
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    height: 100%;
+}
+header .head_link a{
+    transition: 0.3s ease;
+    align-items: center;
+    font-size: 20px;
+    color: var(--light);
+}
+header .head_link a:hover{
+    color: var(--yellow);
+}
+header .head_link a div{
+    padding: 26px 10px;
+    height: 80px;
+    text-align: center;
+    justify-content: center;
+}
+header .head_log{
+    max-width: 23.66667%;
+    display: flex;
+}
+header .head_log .book_room a{
+    transition: 0.3s ease;
+    padding: 1.023rem 1.6rem;
+    background-color: #d69c2f;
+    color: var(--light);
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block !important;
+}
+header .head_log .book_room a:hover{
+    background-color: var(--light);
+    color: #d69c2f;
+}
+header .head_log .log_admin{
+    padding: 1.023rem 1.8rem;
+}
+header .head_log .log_admin a{
+    color: #d69c2f;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+@media (min-width: 960px){
+    .head_content {
+        max-width: 980px;
+    }
+}
+@media (min-width: 1200px){
+    .head_content {
+        max-width: 1380px;
+    }
+}
+.wrapper {
+	margin: auto;
+	margin-top: 100px;
+	max-width: 1000px;
+}
+.wrapper h1 {
+	padding: 20px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+.project {
+	display: flex;
+}
+.shop {
+	flex: 75%;
+}
+.box {
+	display: flex;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	background: #fff;
+	transition: all .6s ease;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.box img {
+	width: 300px;
+	height: 200px;
+	object-fit: cover;
+}
+.content {
+	padding: 20px;
+	width: 100%;
+	position: relative;
+}
+.content h3 {
+	margin-bottom: 30px;
+}
+.content h4 {
+	margin-bottom: 50px;
+}
+.btn-area {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	padding: 10px 25px;
+	background-color: #3a71a9;
+	color: white;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.btn-area:hover {
+	background-color: #76bfb6;
+	color: #fff;
+	font-weight: 600;
+}
+.unit input {
+	width: 40px;
+	padding: 5px;
+	text-align: center;
+}
+.btn-area i {
+	margin-right: 5px;
+}
+
+.booking {
+	background-color: lightgray;
+	padding: 20px;
+	width: 100%;
+	position: relative;
+	margin: 15px;
+}
+
+.booking i {
+	
+	margin: 15px;
+}
+
+form {
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+  }
+  
+  .value-button {
+	display: inline-block;
+	border: 1px solid #ddd;
+	margin: 0px;
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 11px 0;
+	background: #eee;
+  
+  }
+  
+  .value-button:hover {
+	cursor: pointer;
+  }
+  
+  form #decrease {
+	margin-right: -4px;
+	border-radius: 8px 0 0 8px;
+  }
+  
+  form #increase {
+	margin-left: -4px;
+	border-radius: 0 8px 8px 0;
+  }
+  
+  form #input-wrap {
+	margin: 0px;
+	padding: 0px;
+  }
+  
+  input#number {
+	text-align: center;
+	border: none;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin: 0px;
+	width: 40px;
+	height: 40px;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+  }
+  .cancel-button {
+		  padding: 10px 20px;
+		  background-color: #ff0000;
+		  color: white;
+		  cursor: pointer;
+		  border-radius: 8px;
+		  border: none;
+		  margin-right: 10px;
+		  font-size: 14px;
+	  }
+  
+  .cancel-button:hover {
+		  background-color: #cc0000;
+	  }
+   .test{
+	  display: flex;
+	  flex-direction: row; 
+    align-items: center;
+  }
+   form * {
+    margin: initial;
+    padding: initial;
+    box-sizing: initial;
+}
+  .cancel-button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+  .cancel-button:hover {
+    background-color: #cc0000;
+}
+  .value-button{
+    padding-bottom: 4px;
+}
+
+@media screen and (max-width: 700px) {
+	.content h3 {
+		margin-bottom: 15px;
+	}
+	.content h4 {
+		margin-bottom: 20px;
+	}
+	.btn2 {
+		display: none;
+	}
+	.box {
+		height: 150px;
+	}
+	.box img {
+		height: 150px;
+		width: 200px;
+	}
+}
+@media screen and (max-width: 900px) {
+	.project {
+		flex-direction: column;
+	}
+	.right-bar {
+		margin-left: 0;
+		margin-bottom: 20px;
+	}
+}
+@media screen and (max-width: 1250px) {
+	.wrapper {
+		max-width: 95%;
+	}
+}
+
+
+/* FOOT */
+footer .container{
+	margin:auto;
+}
+footer .row{
+	display: flex;
+	flex-wrap: wrap;
+}
+footer ul{
+	list-style: none;
+}
+footer ul .inf{
+    display: flex;
+    color: #d69c2f;
+}
+footer ul .tt{
+    color: #d69c2f;
+    margin-bottom: 10px;
+}
+.footer{
+	background-color: var(--dark);
+    padding: 40px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+    text-transform: uppercase;
+	color: #ffffff;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #d69c2f;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+    position: relative;
+	font-size: 16px;
+	text-transform: capitalize;
+	text-decoration: none;
+	/* font-weight: 300; */
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+footer ul .inf a{
+    margin-left: 5px;
+    text-transform:initial;
+}
+footer ul .inf span{
+    color: #fff;
+    margin-left: 5px;
+}
+.footer-col ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Chiều cao của gạch chân */
+    bottom: 0;
+    left: 0;
+    background-color: #d69c2f; /* Màu của gạch chân */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: transform 0.3s ease, visibility 0.3s ease;
+  }
+.footer-col ul li a:hover{
+    color: #fff;
+}
+.footer-col ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	background-color: #d69c2f;
+}
+
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+    }
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+    }
+}
+@media (min-width: 960px){
+    footer .container, main .ovv_content, main .search_content,
+    main .choose_content, main .room
+    {
+        max-width: 980px;
+    }
+}
+@media (min-width: 1200px){
+    footer .container, main .ovv_content, main .search_content,
+    main .choose_content, main .room
+    {
+        max-width: 1380px;
+    }
+}

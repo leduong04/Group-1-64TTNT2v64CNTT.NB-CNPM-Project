@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<header id="header_bar">
+        <div class="nav_bar">
+            <div class="head_content">
+                <div class="head_logo">
+                    <a href=""><img src="../../../img/loggo.png" alt=""></a>
+                </div>
+                <div class="head_link">
+                    <ul class="menu_item">
+                        <li class="menu_child">
+                            <a href=""><div>Trang chu</div></a>
+                        </li>
+                        <li class="menu_child">
+                            <a href=""><div>Room</div></a>
+                        </li>
+                        <li class="menu_child">
+                            <a href=""><div>Trang chu</div></a>
+                        </li>
+                        <li class="menu_child">
+                            <a href=""><div>Trang chu</div></a>
+                        </li>   
+                    </ul>
+                </div>
+                <div class="head_log">
+                    <div class="book_room">
+                        <a href="">Đặt ngay</a>
+                    </div>
+                    <div class="log_admin">
+                        <a href="">Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+
+		<h1>Shopping Cart</h1>
+		<div class="project">
+			<div class="shop">
+				<div class="box">
+					<img src="https://static03-cdn.oneinventory.com/images/2023/11/2826ea11bdfe4843bc58fc21ee8d5eb5.jpg">
+					<div class="content">
+						<h3>Lotus Aroma Sapa Hotel</h3>
+						<i class="fas fa-map-marker-alt"></i><span>  Đường N4 - tổ 5 phường Hàm Rồng, Thị Xã Sapa, Huyện Sa Pa, Lào Cai, Việt Nam</span>
+							<div class="test">
+                            <form>
+                                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                                <input type="number" id="number" value="0" />
+                                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                            </form>
+                            <button class="cancel-button" onclick="huyDatPhong('room2')">Hủy đặt phòng</button>
+                        </div>
+
+					</div>
+					<div class="booking">
+						<strong><p>1 Phòng, 1 Đêm, 2 Người lớn, 0 Trẻ em, 0 Em bé</p></strong>
+						<i class="fas fa-calendar-check"> Ngày nhận: </i><span>18/12/2023</span><br>
+						<i class="fas fa-calendar-minus"> Ngày trả: </i><span>18/12/2023</span>
+					</div>
+				</div>
+				<div class="box">
+					<img src="https://static03-cdn.oneinventory.com/images/2023/11/2826ea11bdfe4843bc58fc21ee8d5eb5.jpg">
+					<div class="content">
+						<h3>Lotus Aroma Sapa Hotel</h3>
+						<i class="fas fa-map-marker-alt"></i><span>  Đường N4 - tổ 5 phường Hàm Rồng, Thị Xã Sapa, Huyện Sa Pa, Lào Cai, Việt Nam</span>
+							<div class="test">
+                            <form>
+                                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                                <input type="number" id="number" value="0" />
+                                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                            </form>
+                            <button class="cancel-button" onclick="huyDatPhong('room2')">Hủy đặt phòng</button>
+                        </div>
+
+					</div>
+					<div class="booking">
+						<strong><p>1 Phòng, 1 Đêm, 2 Người lớn, 0 Trẻ em, 0 Em bé</p></strong>
+						<i class="fas fa-calendar-check"> Ngày nhận: </i><span>18/12/2023</span><br>
+						<i class="fas fa-calendar-minus"> Ngày trả: </i><span>18/12/2023</span>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li class="inf">Address:  <span>Hà Nội, ĐHTL</span></li>
+                        <li class="inf">Phone:  <span>+84 9999 99 99 99</span></li>
+                        <li class="inf">Email: <a href=""> info@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>AVIP HOTEL LUXURY</h4>
+                    <ul>
+                        <li class="tt">Khách sạn cực khoái</li>
+                    </ul>
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+</body>
+<script>
+    function increaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById('number').value = value;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById('number').value = value;
+}
+</script>
+</html>
