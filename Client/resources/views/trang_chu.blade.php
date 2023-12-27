@@ -24,20 +24,20 @@
                             <a href="/"><div>Trang chủ</div></a>
                         </li>
                         <li class="menu_child">
-                            <a href="{{route('user.room')}}"><div>Phòng</div></a>
+                            <a href="{{route('user.room')}}" onclick="return validateSession()"><div>Phòng</div></a>
                         </li>
                         <li class="menu_child">
-                            <a href="{{route('user.service')}}"><div>Dịch Vụ</div></a>
+                            <a href="{{route('user.service')}}" onclick="return validateSession()"><div>Dịch Vụ</div></a>
                         </li>
                         <li class="menu_child">
-                            <a href="{{ route('cart.list') }}"><div>Giỏ Hàng</div></a>
+                            <a href="{{ route('cart.list') }}" onclick="return validateSession()"><div>Booking</div></a>
                             {{ Cart::getTotalQuantity()}}
                         </li>   
                     </ul>
                 </div>
                 <div class="head_log">
                     <div class="book_room">
-                        <a href="{{route('user.room')}}">Đặt ngay</a>
+                        <a href="{{route('user.room')}}" onclick="return validateSession()">Đặt ngay</a>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@
                                                 {{ $room_type-> ThongTinPhong}}
                                             </p>
                                             <div class="slide_link">                                   
-                                                <a href="{{route('user.room_detail',['id'=>$room_type->id])}}">Chi tiết</a>
+                                                <a href="{{route('user.room_detail',['id'=>$room_type->id])}}" onclick="return validateSession()">Chi tiết</a>
                                                 <form action="{{route('cart.store')}}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     <input type="hidden" value="{{$room_type->id}}" name="id">
@@ -207,8 +207,16 @@
                                                 {{$service->MoTa}}
                                             </p>
                                             <div class="slide_link">                                   
-                                                <a href="{{route('user.service_detail',['id'=>$service->id])}}">Chi tiết</a>
-                                                <a href="">Đặt ngay</a>
+                                                <a href="{{route('user.service_detail',['id'=>$service->id])}}" onclick="return validateSession()">Chi tiết</a>
+                                                <form action="{{route('cart.addService')}}" method="post" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <input type="hidden" value="{{$service->id}}" name="id">
+                                                    <input type="hidden" value="{{$service->name}}" name="name">
+                                                    <input type="hidden" value="{{$service->price}}" name="price">
+                                                    <input type="hidden" value=" ./../../../image/{{$service->img_link}}" name="image">
+                                                    <input type="hidden" id="hiddenQuantity" value="1" name="quantity">
+                                                    <button style="cursor: pointer;" onclick="return validateSession()">Đặt Ngay</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -231,14 +239,14 @@
                     <h4>company</h4>
                     <ul>
                         <li><a href="/">trang chủ</a></li>
-                        <li><a href="{{route('user.room')}}">phòng</a></li>
-                        <li><a href="{{route('user.service')}}">dịch vụ</a></li>
+                        <li><a href="{{route('user.room')}}" onclick="return validateSession()">phòng</a></li>
+                        <li><a href="{{route('user.service')}}" onclick="return validateSession()">dịch vụ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>get help</h4>
                     <ul>
-                        <li><a href="{{route('user.feed_back')}}">Feed Back</a></li>
+                        <li><a href="{{route('user.feed_back')}}" onclick="return validateSession()">Feed Back</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

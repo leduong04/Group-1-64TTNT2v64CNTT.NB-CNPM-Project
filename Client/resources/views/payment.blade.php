@@ -29,7 +29,7 @@
                         <a href="{{route('user.service')}}"><div>Dịch Vụ</div></a>
                     </li>
                     <li class="menu_child">
-                        <a href="{{ route('cart.list') }}"><div>Giỏ Hàng</div></a>
+                        <a href="{{ route('cart.list') }}"><div>Booking</div></a>
                         {{ Cart::getTotalQuantity()}}
                     </li>   
                 </ul>
@@ -48,8 +48,20 @@
     <div class="payment_name">Thanh toán</div>
     <div class="payment_main">
       <div class="pay_prd">
-        <h3>Chi Tiết Đặt Phòng</h3>
-        @foreach($cartItems as $Items)
+        <h3 style="margin-top:10px">Chi Tiết Đặt Phòng</h3>
+        <h4>Phòng</h4>
+        @foreach($roomTypes as $Items)
+        <div class="product">
+          <a href=""><img src="{{$Items -> attributes->image}}" alt=""></a>
+          <div class="content">
+            <span class="name">{{$Items->name}}</span>
+            <br>
+            <span class="quantity">Số lượng : <span class="qtt">{{ $Items->quantity}}</span></span>
+          </div>
+        </div>
+        @endforeach
+        <h4>Dịch Vụ</h4>
+        @foreach($services as $Items)
         <div class="product">
           <a href=""><img src="{{$Items -> attributes->image}}" alt=""></a>
           <div class="content">
@@ -76,12 +88,14 @@
           </div>
           <div class="right">
             <h3>Hóa Đơn</h3>
-            <div class="prd_order"><span><i class="fa-solid fa-basket-shopping"></i> Số Lượng Phòng : </span><span class="chan">{{Cart::getTotalQuantity()}}</span></div>
+            <div class="prd_order"><span><i class="fa-solid fa-basket-shopping"></i> Số Lượng Phòng : </span><span class="chan">{{$Room_Quantity}}</span></div>
+            <div class="prd_order"><span><i class="fa-solid fa-basket-shopping"></i> Số Lượng Dịch Vụ : </span><span class="chan">{{$Service_Quantity}}</span></div>
             <div class="prd_order"><span><i class="fa-solid fa-calendar-days"></i> Ngày nhận phòng : </span><span class="chan">{{ $checkIn }}</span></div>
             <div class="prd_order"><span><i class="fa-solid fa-calendar-days"></i> Ngày trả phòng : </span><span class="chan">{{ $checkOut }}</span></div>
             <div class="prd_order"><span><i class="fa-solid fa-moon"></i> Số Đêm : </span><span class="chan">{{$numDays}}</span></div>
             <div class="price_order"><i class="fa-solid fa-money-check-dollar"></i><span> Tổng Tiền : </span><span class="chan"> {{number_format($TotalPay, 0, ',', '.')}} đ</span></div>
             <button type="submit">Xác Nhận</button>
+            <a class="back"href="{{ route('cart.list') }}">Quay Lại</a>
           </div>
         </form>
       </div>
@@ -129,6 +143,12 @@
           </div>
       </div>
   </footer>
+
+  @if(session('error'))
+        <script>
+            alert("{{ session('error') }}");
+        </script>
+    @endif 
 
     <script src="{{asset('assets/js/payment.js')}}"></script>
 </body>

@@ -26,7 +26,8 @@
                             <a href="{{route('user.service')}}"><div>Dịch Vụ</div></a>
                         </li>
                         <li class="menu_child">
-                            <a href=""><div>Giỏ Hàng</div></a>
+                            <a href="{{ route('cart.list') }}"><div>Booking</div></a>
+                            {{ Cart::getTotalQuantity()}}
                         </li>   
                     </ul>
                 </div>

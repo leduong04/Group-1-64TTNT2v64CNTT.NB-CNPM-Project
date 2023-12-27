@@ -235,9 +235,12 @@ header .head_log .log_admin a{
 	width: 100%;
 	padding: 0.7rem 1.5rem;		
 	background: #d69c2f;
+  font-family: "Open Sans", sans-serif;
+  text-transform: capitalize;
 	color: white;
 	outline: none;
 	margin-top: 1rem;
+  margin-bottom: 20px;
 	cursor: pointer;
 }
 
@@ -246,6 +249,28 @@ header .head_log .log_admin a{
 	background: #d69c2f;
 }
 .payment button:hover{
+  background-color: var(--light);
+  color: #d69c2f;
+}
+
+.payment .back {
+  font-size: 18px;
+	width: 100%;
+	padding: 0.7rem 1.5rem;		
+  font-family: "Open Sans", sans-serif;
+  text-transform: capitalize;
+	background: #d69c2f;
+	color: white;
+	outline: none;
+	margin-top: 1rem;
+	cursor: pointer;
+}
+
+.payment .back {
+  border-color: #d69c2f;
+	background: #d69c2f;
+}
+.payment .back:hover{
   background-color: var(--light);
   color: #d69c2f;
 }

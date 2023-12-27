@@ -23,24 +23,64 @@ class CartController extends Controller
         } else {
             $checkIn = $checkOut = 'Ngày không hợp lệ';
         }
-        $Pay = \Cart::getTotal();
-        $TotalPay = $Pay * $numDays;
+        
+
+        $roomTypes = $cartItems->filter(function ($item) {
+            return isset($item->attributes['type']) && $item->attributes['type'] === 'room_type';
+        });
+        $Pay = $roomTypes->sum(function ($item) {
+            return $item->price * $item->quantity;
+        });
+        $Room_Quantity = $roomTypes->sum(function ($item) {
+            return $item->quantity;
+        });
+        $roomPay = $Pay * $numDays;
     
-        return view('./cart', compact('cartItems', 'checkIn', 'checkOut', 'numPeople','numDays','TotalPay'));
+        $services = $cartItems->filter(function ($item) {
+            return isset($item->attributes['type']) && $item->attributes['type'] === 'service';
+        });
+        $Pay2 = $services->sum(function ($item) {
+            return $item->price * $item->quantity;
+        });
+        $Service_Quantity = $services->sum(function ($item) {
+            return $item->quantity;
+        });
+
+        $TotalPay = $roomPay + $Pay2;
+    
+        return view('./cart', compact('roomTypes','services', 'checkIn', 'checkOut', 'numPeople','numDays','TotalPay','Room_Quantity','Service_Quantity'));
     }
     
 
     public function addToCart(Request $request){
         \Cart::add([
-            'id' => $request->id,
+            'id' => 'room_type_' . $request->id,
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
             'attributes' => array(
                 'image' => $request->image,
+                'type' => 'room_type',
             ),
         ]);
+        session(['room_type' => 'room_type_' . $request->id]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
+        return redirect()->route('cart.list');
+    }
+
+    public function addServiceToCart(Request $request){
+        \Cart::add([
+            'id' => 'service_' . $request->id,
+            'name' => $request->name,
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'attributes' => array(
+                'image' => $request->image,
+                'type' => 'service',
+            ),
+        ]);
+        session(['service' => 'service_' . $request->id]);
+        session()->flash('success', 'Service is Added to Cart Successfully !');
         return redirect()->route('cart.list');
     }
 

@@ -29,7 +29,8 @@
                         <a href="{{route('user.service')}}"><div>Dịch Vụ</div></a>
                     </li>
                     <li class="menu_child">
-                        <a href=""><div>Giỏ Hàng</div></a>
+                        <a href="{{ route('cart.list') }}"><div>Booking</div></a>
+                        {{ Cart::getTotalQuantity()}}
                     </li>   
                 </ul>
             </div>
@@ -45,7 +46,46 @@
 		<h1><span>Đặt phòng</span></h1>
 		<div class="project">
 			<div class="shop">
-            @foreach($cartItems as $Items)
+            <h2 style="margin-bottom:10px">Phòng</h2>
+            @foreach($roomTypes as $Items)
+				<div class="left-bar">
+                        
+                            <div class="box">
+                    <img src="{{$Items -> attributes->image}}">
+                    <div class="content">
+                    <h3>{{$Items->name}}</h3>
+                    <h4>{{ number_format($Items->price, 0, ',', '.') }} đ</h4>
+                        <div class="lb">
+                        <form action="{{ route('cart.update')}}" method="post" >
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $Items->id}}">
+                            <p class="unit" style="display: inline-block; font-size:18px">Số lượng:
+                            <input type="number" name="quantity" value="{{ $Items->quantity}}">
+                            </p>
+                            <button class="update-button" type="submit">Cập nhật</button>
+                        </form>
+                    <form action="{{ route('cart.remove')}}" method="post" style="width: auto;">
+                        @csrf
+                        <input type="hidden" value="{{$Items -> id}}" name="id">
+                        <button class="cancel-button" type="submit">Hủy</button>
+                    </form>
+                </div>
+                    </div>
+                    <div class="booking">
+                        <strong>
+                            <p>Ngày nhận: <span>{{ $checkIn }}</span><br></p>
+                        </strong>
+                        <strong>
+                            <p>Ngày trả:  <span>{{ $checkOut }}</span><br></p>
+                        </strong>
+                    </div>
+
+
+                </div>
+                        </div>
+                @endforeach
+                <h2 style="margin-bottom:10px">Dịch Vụ</h2>
+                @foreach($services as $Items)
 				<div class="left-bar">
                         
                             <div class="box">
@@ -85,8 +125,9 @@
 			</div>
 			<div class="right-bar">
 				<div class="pay">
-					<p><span>Số phòng đã đặt:</span> <span>{{Cart::getTotalQuantity()}}</span></p>
+					<p><span>Số phòng đã đặt:</span> <span>{{$Room_Quantity}}</span></p>
                     <p><span>Số lượng đêm:</span> <span>{{$numDays}}</span></p>
+                    <p><span>Số lượng dịch vụ:</span> <span>{{$Service_Quantity}}</span></p>
                     <p><span>Số lượng người:</span> <span>{{ $numPeople }}</span></p>
 					<hr>
 					<p class="rb"><span>Thành tiền</span> <span>{{number_format($TotalPay, 0, ',', '.')}} đ</span></p><a href="{{ route('payment') }}"><i class="fa fa-shopping-cart"></i>Thanh Toán</a>

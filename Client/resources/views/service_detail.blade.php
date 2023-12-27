@@ -27,7 +27,8 @@
                             <a href="{{route('user.service')}}"><div>Dịch Vụ</div></a>
                         </li>
                         <li class="menu_child">
-                            <a href=""><div>Giỏ Hàng</div></a>
+                            <a href="{{ route('cart.list') }}"><div>Booking</div></a>
+                            {{ Cart::getTotalQuantity()}}
                         </li>   
                     </ul>
                 </div>
@@ -73,7 +74,15 @@
                             </p>
                             <p class="image-right-prize">{{ number_format($service_details->price, 0, ',', '.') }}đ/lần</p>
                             <div class="image-right-btt">
-                                <button><a href="">Đặt ngay</a></button>
+                                <form action="{{route('cart.addService')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" value="{{$service_details->id}}" name="id">
+                                    <input type="hidden" value="{{$service_details->name}}" name="name">
+                                    <input type="hidden" value="{{$service_details->price}}" name="price">
+                                    <input type="hidden" value=" ./../../../image/{{$service_details->img_link}}" name="image">
+                                    <input type="hidden" id="hiddenQuantity" value="1" name="quantity">
+                                    <button style="cursor: pointer;" onclick="return validateSession()">Đặt Ngay</button>
+                                </form>
                             </div>
                         </div>
                     </div>

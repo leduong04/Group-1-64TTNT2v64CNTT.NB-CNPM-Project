@@ -26,7 +26,8 @@
                             <a href="{{route('user.service')}}"><div>Dịch Vụ</div></a>
                         </li>
                         <li class="menu_child">
-                            <a href=""><div>Giỏ Hàng</div></a>
+                            <a href="{{ route('cart.list') }}"><div>Booking</div></a>
+                            {{ Cart::getTotalQuantity()}}
                         </li>   
                     </ul>
                 </div>
@@ -70,21 +71,16 @@
                                 </div>
                             </div>
                             <div class="cart_right">
-                                <form action="">
+                                <form action="{{route('cart.addService')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <p class="cart_right_prize"><span>{{ number_format($service->price, 0, ',', '.') }}</span> đ (1 lần)</p>
-                                    <div class="cart_right_num">
-                                        <button class="giam" type="button" onclick="decreaseQuantity(this, this.closest('.cart'))">
-                                            <i class="fa-solid fa-minus"></i>
-                                        </button>
-                                        <button class="tang" type="button" onclick="increaseQuantity(this, this.closest('.cart'))">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </button>
-                                        
-                                        <input type="text" class="quantity-input" id="quantity-input" value="1">
-                                    </div>
-                                    <div class="cart_right_btt">
-                                        <button>Chọn</button>
-                                        <button type="submit">Đặt ngay</button>
+                                    <div class="cart_right_btt" style="margin-top: 20px;">
+                                        <input type="hidden" value="{{$service->id}}" name="id">
+                                        <input type="hidden" value="{{$service->name}}" name="name">
+                                        <input type="hidden" value="{{$service->price}}" name="price">
+                                        <input type="hidden" value=" ./../../../image/{{$service->img_link}}" name="image">
+                                        <input type="hidden" id="hiddenQuantity" value="1" name="quantity">
+                                        <button style="cursor: pointer;" onclick="return validateSession()" >Đặt Ngay</button>
                                     </div>
                                 </form>
                             </div>

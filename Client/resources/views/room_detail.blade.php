@@ -27,7 +27,8 @@
                             <a href="{{route('user.service')}}"><div>Dịch Vụ</div></a>
                         </li>
                         <li class="menu_child">
-                            <a href=""><div>Giỏ Hàng</div></a>
+                            <a href="{{ route('cart.list') }}"><div>Booking</div></a>
+                            {{ Cart::getTotalQuantity()}}
                         </li>   
                     </ul>
                 </div>
@@ -68,7 +69,7 @@
                         </div>
                         <div class="image-right">
                             <div class="image-right_tt">
-                                <span>Con 2 phong chong</span>
+                                <span>Còn 2 phòng trống</span>
                             </div>
                             <p class="image-right-name">
                                 {{$room_details->name}}
