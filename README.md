@@ -11,7 +11,15 @@ Tên đề tài: Web Khách Sạn
 - Bài thực hành 2: [Product Backlog](https://docs.google.com/document/d/1aVD8_jMq8EvKNQiuLSvE2p9Oql2u-nT0uTJVajor2u4/edit?fbclid=IwAR1XXX-gCNa95eKYWyFv0mJnwFV3RzS8fy5Bc79x5tmT3jB7EcW-HHntGAU)
 - Bài thực hành 3: [Sprint 1](https://docs.google.com/document/d/1bc6juyxKt5wgkBm_bCJ44eTQ-tky4N5zdvk-bFcrys0/edit?fbclid=IwAR38rp1ab8GK-rxMkbYhWGEwStcwrGA26zLAi9k_KphyGDcN85wJ-Bk89ys&pli=1)
 - Bài thực hành 4: [Sprint 2](https://docs.google.com/document/d/1YyrAzqaTHw0cUe8DcSUxlXbDC0KgcZWvJ-nnQS-2yxs/edit?usp=sharing)
-
+# CHANGELOG
+## Client
+- Chức năng xem tất cả phòng.
+- Chức năng xem chi tiết phòng.
+- Chức năng đặt phòng.
+- Chức năng xem tất cả dịch vụ.
+- Chức năng xem chi tiết dịch vụ.
+- Chức năng đặt dịch vụ.
+- Chức năng gửi feed back.
 # Setup 
 1. Clone về
 ```sh
