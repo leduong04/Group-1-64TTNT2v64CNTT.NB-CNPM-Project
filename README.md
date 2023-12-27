@@ -3,6 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 Bài tập lớn môn CNPM của nhóm 1 lớp 64TTNT2v64CNTT.NB
+<br>
 Tên đề tài: Web Khách Sạn
 
 # Tài liệu kỹ thuật
